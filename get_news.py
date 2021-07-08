@@ -5,7 +5,7 @@ news_api_key = str(keys.get_news_api_key())
 headers={'X-Api-Key':news_api_key}
 
 
-def get_news_from_keyword(keyword, n_news=8):
+def get_news_from_keyword(keyword, n_news=5):
     news_url = 'https://newsapi.org/v2/everything?language=en&q='+keyword
     response = requests.get(news_url,headers=headers).text
     response = json.loads(response)['articles']
